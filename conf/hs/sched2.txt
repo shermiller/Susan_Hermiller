@@ -1,0 +1,146 @@
+
+------------------------------------------------------
+                TWENTY-SECOND HOLIDAY SYMPOSIUM
+                  NEW MEXICO STATE UNIVERSITY
+                          January 3-7
+                      TENTATIVE SCHEDULE
+-------------------------------------------------------
+FRIDAY, JANUARY 3
+
+9-12 Registration
+
+-------------------------
+9:00-10:00   D. Holt, String rewriting and the Knuth-Bendix algorithm
+-------------------------
+
+10:00-11:00  Break
+
+11:00-11:30  J. Wavrik, Groebner bases, rewrite rules, and matrix
+expressions
+
+11:40-12:10  M. Stankus, Applying noncommutative Groebner bases
+to problems in analysis and control theory
+ 
+12:10-2:00 Lunch
+
+2:00-2:30  A. Heyworth, Computerized left Knuth-Bendix procedure
+for enumerating cosets
+
+2:40-3:10  X. Kramer, Combinatorial homotopy of simplicial
+complexes
+
+3:20-3:50  Software demonstration
+
+-------------------------
+4:00-5:00   E. Green, Groebner bases
+-------------------------
+
+8:00  Reception/Cash Bar, Hilton Hotel
+
+-------------------------------------------------------
+SATURDAY, JANUARY 4
+
+-------------------------
+9:00-10:00   E. Green, Algorithms
+-------------------------
+
+10:00-10:30  Break
+
+10:30-11:00  T. Gateva-Ivanova, Noncommutative Groebner
+bases in skew-polynomial rings
+
+11:10-11:40  S. Hermiller, Rewriting systems and 3-manifolds
+
+11:50-12:20  M. Newman, Some use of Knuth-Bendix in the study of groups
+
+12:20-2:00 Lunch
+
+2:00-2:30  X. Kramer, The Noetherian property in some quadratic
+algebras
+
+2:40-3:10  V. Ufnarovski, tba
+
+3:20-3:50  Software demonstration
+
+-------------------------
+4:00-5:00   D. Holt, Applications to group theory, Polycyclic groups
+-------------------------
+
+6:00   Banquet
+
+-------------------------------------------------------
+SUNDAY, JANUARY 5
+
+-------------------------
+8:30-9:30   D. Holt, Quotient algorithms, Verifying polycyclicity
+-------------------------
+
+9:40-10:10  L. Filus, tba
+
+10:20-10:50  G. Agnarsson, On functionals and outside corners of
+monomial ideals
+
+-------------------------
+11:00-12:00   E. Green, Computational aspects
+-------------------------
+
+No lectures in the afternoon.  Excursion to White Sands
+National Monument, a hike, or some other enchanting endeavor.
+
+-------------------------------------------------------
+MONDAY, JANUARY 6
+
+-------------------------
+9:00-10:00   E. Green, Modules, presentations, and resolutions
+-------------------------
+
+10:00-10:30  Break
+
+10:30-11:00  D. Parashar, Quantum Groups and Quantum Spaces
+
+11:10-11:40  M. Bardzell, A lifted Groebner basis for the enveloping
+algebra
+
+11:50-12:20  P. Malcomson, Groebner-Shirsov bases for quantum
+enveloping algebras
+
+12:20-2:00 Lunch
+
+2:00-2:30  E. Marcos, Graded rings of local finite representation
+type
+
+2:40-3:10  G. Ostheimer, Finding matrix representations for
+polycyclic groups
+
+3:20-3:50  Software demonstration
+
+-------------------------
+4:00-5:00   D. Holt, Automatic groups
+-------------------------
+-------------------------------------------------------
+TUESDAY, JANUARY 7
+
+-------------------------
+9:00-10:00   D. Holt, Subgroups and cosets
+-------------------------
+
+10:00-10:30  Break
+
+10:10-10:40  Yuzvinsky, Koszul algebras related to hyperplane
+arrangements and graphs
+
+10:50-11:20  L. Pritchard, The ideal membership  problem in
+non-commutative polynomial rings
+
+11:30-12:00  Talk, tba
+
+12:00-1:00 Lunch
+
+-------------------------
+1:00-2:00   E. Green, Applications of Groebner bases
+-------------------------
+
+
+
+                           
+
