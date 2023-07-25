@@ -1,0 +1,91 @@
+Script started on Sun 21 May 2017 12:52:50 AM CDT
+math-compute-1:~ $ gap
+
+
+            #########           ######         ###########           ###  
+         #############          ######         ############         ####  
+        ##############         ########        #############       #####  
+       ###############         ########        #####   ######      #####  
+      ######         #         #########       #####    #####     ######  
+     ######                   ##########       #####    #####    #######  
+     #####                    ##### ####       #####   ######   ########  
+     ####                    #####  #####      #############   ###  ####  
+     #####     #######       ####    ####      ###########    ####  ####  
+     #####     #######      #####    #####     ######        ####   ####  
+     #####     #######      #####    #####     #####         #############
+      #####      #####     ################    #####         #############
+      ######     #####     ################    #####         #############
+      ################    ##################   #####                ####  
+       ###############    #####        #####   #####                ####  
+         #############    #####        #####   #####                ####  
+          #########      #####          #####  #####                ####  
+                                                                          
+     Information at:  http://www.gap-system.org
+     Try '?help' for help. See also  '?copyright' and  '?authors'
+    
+   Loading the library. Please be patient, this may take a while.
+GAP4, Version: 4.4.12 of 17-Dec-2008, x86_64-unknown-linux-gnu-gcc
+Components:  small 2.1, small2 2.0, small3 2.0, small4 1.0, small5 1.0, 
+             small6 1.0, small7 1.0, small8 1.0, small9 1.0, small10 0.2, id2 3.0, 
+             id3 2.1, id4 1.0, id5 1.0, id6 1.0, id9 1.0, id10 0.1, trans 1.0, 
+             prim 2.1  loaded.
+Packages:    AClib 1.1, Polycyclic 2.6, Alnuth 2.2.5, AutPGrp 1.3, CrystCat 1.1.3, 
+             Cryst 4.1.6, CRISP 1.3.2, CTblLib 1.1.3, TomLib 1.1.4, FactInt 1.5.2, 
+             GAPDoc 1.2, FGA 1.1.0.1, IRREDSOL 1.1.2, LAGUNA 3.5.0, Sophus 1.23, 
+             Polenta 1.2.7, ResClasses 2.5.3  loaded.
+gap> LoadPackage("ACE");
+---------------------------------------------------------------------------
+Loading    ACE (Advanced Coset Enumerator) 5.0
+GAP code by Greg Gamble <gregg@itee.uq.edu.au> (address for correspondence)
+       Alexander Hulpke (http://www.math.colostate.edu/~hulpke)
+           [uses ACE binary (C code program) version: 3.001]
+C code by  George Havas (http://www.itee.uq.edu.au/~havas)
+           Colin Ramsay (http://www.itee.uq.edu.au/~cram)
+
+                 For help, type: ?ACE
+---------------------------------------------------------------------------
+true
+gap> G := FreeGroup(2);
+<free group on the generators [ f1, f2 ]>
+gap> ACECosetTableFromGensAndRels([G.1,G.2],[],
+> [G.1^2, 
+> G.2^-2, 
+> G.1*G.2^2*G.1^-1, 
+> G.2^-1*G.1^2*G.2,
+> G.1*G.2*G.1*G.2*G.1*G.2, 
+> G.2^-1*G.1^-1*G.2^-2*G.1*G.2,
+> G.2^-1*G.1^-1*G.2^-1*G.1*G.2^-1*G.1^-1]:purer,incomplete);
+[ [ 2, 1, 5, 6, 3, 4 ], [ 2, 1, 5, 6, 3, 4 ], [ 3, 4, 1, 2, 6, 5 ], 
+  [ 3, 4, 1, 2, 6, 5 ] ]
+gap> Display(TransposedMat(last));
+[ [  2,  2,  3,  3 ],
+  [  1,  1,  4,  4 ],
+  [  5,  5,  1,  1 ],
+  [  6,  6,  2,  2 ],
+  [  3,  3,  6,  6 ],
+  [  4,  4,  5,  5 ] ]
+gap> 
+gap> #Index |G:H| is number of rows of displayed matrix
+gap> #if the Stallings graph from that matrix has 2 edges in and 2 out
+gap> #at every vertex.
+gap> 
+gap> #Double check index with Index command:
+gap> 
+gap> H := Subgroup( G, [G.1^2, 
+> G.2^-2, 
+> G.1*G.2^2*G.1^-1, 
+> G.2^-1*G.1^2*G.2,
+> G.1*G.2*G.1*G.2*G.1*G.2, 
+> G.2^-1*G.1^-1*G.2^-2*G.1*G.2,
+> G.2^-1*G.1^-1*G.2^-1*G.1*G.2^-1*G.1^-1] );
+Group([ f1^2, f2^-2, f1*f2^2*f1^-1, f2^-1*f1^2*f2, f1*f2*f1*f2*f1*f2, 
+  f2^-1*f1^-1*f2^-2*f1*f2, f2^-1*f1^-1*f2^-1*f1*f2^-1*f1^-1 ])
+gap> Index( G, H );
+6
+gap> quit    
+gap> 
+gap> quit;
+math-compute-1:~ $ exit
+exit
+
+Script done on Sun 21 May 2017 12:53:21 AM CDT

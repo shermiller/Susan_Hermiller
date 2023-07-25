@@ -1,0 +1,133 @@
+Script started on Sun 21 May 2017 10:26:23 PM CDT
+math-compute-1:~ $ gap
+
+
+            #########           ######         ###########           ###  
+         #############          ######         ############         ####  
+        ##############         ########        #############       #####  
+       ###############         ########        #####   ######      #####  
+      ######         #         #########       #####    #####     ######  
+     ######                   ##########       #####    #####    #######  
+     #####                    ##### ####       #####   ######   ########  
+     ####                    #####  #####      #############   ###  ####  
+     #####     #######       ####    ####      ###########    ####  ####  
+     #####     #######      #####    #####     ######        ####   ####  
+     #####     #######      #####    #####     #####         #############
+      #####      #####     ################    #####         #############
+      ######     #####     ################    #####         #############
+      ################    ##################   #####                ####  
+       ###############    #####        #####   #####                ####  
+         #############    #####        #####   #####                ####  
+          #########      #####          #####  #####                ####  
+                                                                          
+     Information at:  http://www.gap-system.org
+     Try '?help' for help. See also  '?copyright' and  '?authors'
+    
+   Loading the library. Please be patient, this may take a while.
+GAP4, Version: 4.4.12 of 17-Dec-2008, x86_64-unknown-linux-gnu-gcc
+Components:  small 2.1, small2 2.0, small3 2.0, small4 1.0, small5 1.0, 
+             small6 1.0, small7 1.0, small8 1.0, small9 1.0, small10 0.2, id2 3.0, 
+             id3 2.1, id4 1.0, id5 1.0, id6 1.0, id9 1.0, id10 0.1, trans 1.0, 
+             prim 2.1  loaded.
+Packages:    AClib 1.1, Polycyclic 2.6, Alnuth 2.2.5, AutPGrp 1.3, CrystCat 1.1.3, 
+             Cryst 4.1.6, CRISP 1.3.2, CTblLib 1.1.3, TomLib 1.1.4, FactInt 1.5.2, 
+             GAPDoc 1.2, FGA 1.1.0.1, IRREDSOL 1.1.2, LAGUNA 3.5.0, Sophus 1.23, 
+             Polenta 1.2.7, ResClasses 2.5.3  loaded.
+gap> # Solving the word problem
+gap> 
+gap> LoadPackage("KBMAG");
+--------------------------------------------------------------------------------
+Loading  kbmag 1.5 (Knuth-Bendix on Monoids and Automatic Groups)
+by Derek Holt (http://www.warwick.ac.uk/~mareg).
+--------------------------------------------------------------------------------
+true
+gap> 
+gap> F:=FreeGroup("a","b","c");
+<free group on the generators [ a, b, c ]>
+gap> a:=F.1; 
+a
+gap> b:=F.2;
+b
+gap> c:=F.3;
+c
+gap> G:=F/[a^2,b^2,c^2,(a*b)^3,(a*c)^3,(b*c)^3];
+<fp group on the generators [ a, b, c ]>
+gap> R:=KBMAGRewritingSystem(G);
+rec(
+           isRWS := true,
+          silent := true,
+  generatorOrder := [_g1,_g2,_g3],
+        inverses := [_g1,_g2,_g3],
+        ordering := "shortlex",
+       equations := [
+         [_g1*_g2*_g1,_g2*_g1*_g2],
+         [_g1*_g3*_g1,_g3*_g1*_g3],
+         [_g2*_g3*_g2,_g3*_g2*_g3]
+       ]
+)
+
+gap> KnuthBendix(R);
+true
+gap> R;
+rec(
+           isRWS := true,
+     isConfluent := true,
+          silent := true,
+  generatorOrder := [_g1,_g2,_g3],
+        inverses := [_g1,_g2,_g3],
+        ordering := "shortlex",
+       equations := [
+         [_g1^2,IdWord],
+         [_g2^2,IdWord],
+         [_g3^2,IdWord],
+         [_g2*_g1*_g2,_g1*_g2*_g1],
+         [_g3*_g1*_g3,_g1*_g3*_g1],
+         [_g3*_g2*_g3,_g2*_g3*_g2],
+         [_g3*_g2*_g1*_g3*_g1,_g2*_g3*_g2*_g1*_g3],
+         [_g3*_g1*_g2*_g3*_g2,_g1*_g3*_g1*_g2*_g3],
+         [_g3*_g1*_g2*_g3*_g1*_g2*_g1,_g1*_g3*_g1*_g2*_g3*_g1*_g2]
+       ]
+)
+
+gap> 
+gap> EnumerateReducedWords(R,0,5);
+[ <identity ...>, a, a*b, a*b*a, a*b*a*c, a*b*a*c*a, a*b*a*c*b, a*b*c, a*b*c*a, 
+  a*b*c*a*b, a*b*c*b, a*b*c*b*a, a*c, a*c*a, a*c*a*b, a*c*a*b*a, a*c*a*b*c, 
+  a*c*b, a*c*b*a, a*c*b*a*c, b, b*a, b*a*c, b*a*c*a, b*a*c*a*b, b*a*c*b, 
+  b*a*c*b*a, b*c, b*c*a, b*c*a*b, b*c*a*b*a, b*c*a*b*c, b*c*b, b*c*b*a, 
+  b*c*b*a*c, c, c*a, c*a*b, c*a*b*a, c*a*b*a*c, c*a*b*c, c*a*b*c*a, c*b, c*b*a, 
+  c*b*a*c, c*b*a*c*b ]
+gap> ReducedForm(R,c*a*c*b*a*b*c*a*c*a);
+a*b*c*b
+gap> Order(R,c*a*c*b*a*b);
+3
+gap> Order(R,a*b*a*c);
+infinity
+gap> Order(R,a*c*a*b);
+infinity
+gap> ReducedForm(R,Comm(a*b*a*c,a*c*a*b));
+<identity ...>
+gap> 
+gap> 
+gap> #Recall from the start of this demo:
+gap> A := G.1;; B := G.2;; C := G.3;;
+gap> H := Subgroup( G, [ A*B*A*C, A*C*A*B ] );
+Group([ a*b*a*c, a*c*a*b ])
+gap> Index( G, H );
+6
+gap> IsAbelian(H);
+true
+gap> p := PresentationSubgroup( G, H, "g" );
+<presentation with 3 gens and 2 rels of total length 6>
+gap> gens := GeneratorsOfPresentation( p );
+[ g1, g2, g3 ]
+gap> TzPrintRelators( p );
+#I  1. g3*g1^-1*g2
+#I  2. g3*g2*g1^-1
+gap> 
+gap> 
+gap> quit;
+math-compute-1:~ $ exit
+exit
+
+Script done on Sun 21 May 2017 10:26:40 PM CDT
