@@ -1,0 +1,49 @@
+<HTML><HEAD><TITLE>Steve Lindblad PhD Dissertation</TITLE></HEAD>
+<BODY>
+
+<H1>Inverse Monoids Presented By a Single Sparse Relator</H1>
+Steve Lindblad (<a href="mailto:slindbla@math.unl.edu">slindbla@math.unl.edu</a>)<br>
+Ph.D. Dissertation<br>
+University of Nebraska--Lincoln<br>
+December 2003<br>
+Advisors: Susan Hermiller and John Meakin
+
+<p>Welcome to my web page.  You will find information about my Ph.D. here.
+
+<p>My dissertation is available in the following formats:
+<a href="lindblad-phd.pdf">PDF</a>,
+<a href="lindblad-phd.ps">Postscript</a>,
+<a href="lindblad-phd.ps.gz">.ps.gz</a>
+
+<p>The program <em>spar</em> determines whether or not a word
+u equals 1 in an inverse monoid of the form M=Inv&lt;X|w=1&gt;, where
+the relator w is a sparse word.  The source code is available in 
+<a href="sparsrc.tar.gz">sparsrc.tar.gz</a>.  To use the
+program, unpack the file (e.g., "tar xzf sparsrc.tar.gz"), change to
+the sparsrc directory ("cd sparsrc"), and
+compile <em>spar</em> by typing "make".  To run the program,
+type "spar" or "./spar".
+You can also try downloading and running the
+GNU/Linux executable (<a href="spar">spar</a>) directly, but you may
+need to compile it yourself to make it work on your machine.
+
+<h2>Abstract</h2>
+We study a class of inverse monoids of the form M=Inv&lt;X|w=1&gt;,
+where the single relator w has a combinatorial property that we call
+<strong>sparse</strong>.  
+For a sparse word w, we prove that the Schutzenberger complex
+of the identity of M has a particularly nice topology.  We analyze
+the manner in which the Schutzenberger complex is constructed using an
+iterative procedure, due to Stephen, analogous to the Todd-Coxeter
+procedure.  We define an appropriate notion of dual graph of the Schutzenberger
+complex, and prove that this dual graph is a tree if w is sparse.
+We use this tree to construct a pushdown automaton that encodes the
+information contained in the Schutzenberger complex.  This pushdown automaton
+provides us with an algorithm that, given a word u,
+determines whether or not u=1 in M.  This, together with results
+of Stephen and the fact due to Ivanov, Margolis, and Meakin that the
+inverse monoid is E-unitary, shows that the word problem is solvable
+for M.  Finally, we provide an implementation, in the C++
+programming language, of the algorithm to determine whether or not
+u=1 in M.
+
